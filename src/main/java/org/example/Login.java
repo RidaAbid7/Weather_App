@@ -74,15 +74,16 @@ public class Login extends Application {
         user.setPromptText(userstr);
         passwordField.setPromptText(pswrd);
 
+        HBox hb2 = new HBox();
+        hb2.getChildren().addAll(signin , signup);
+        hb2.setSpacing(5);
+
         GridPane layout = new GridPane();
         layout.add(username , 0 , 0);
         layout.add(user , 1 , 0);
         layout.add(password , 0 ,1);
         layout.add(passwordField , 1 ,1);
         layout.add(show,2,1);
-        HBox hb2 = new HBox();
-        hb2.getChildren().addAll(signin , signup);
-        hb2.setSpacing(5);
         layout.add(hb2 , 1 ,2);
         layout.setAlignment(Pos.CENTER);
         layout.setVgap(20);
@@ -131,6 +132,8 @@ public class Login extends Application {
 
     public static void main(String[] args) throws Exception {
         reader();
+        Main.function("");
+        Main2.function("", "");
         launch(args);
     }
 }

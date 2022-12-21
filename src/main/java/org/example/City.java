@@ -12,7 +12,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.io.FileNotFoundException;
 
 public class City {
@@ -74,6 +73,7 @@ public class City {
                 city_name = textField.getText();
                 textField.setText(" ");
                 Main.function(city_name);
+
             }
         });
 
