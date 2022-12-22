@@ -8,9 +8,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -54,19 +53,25 @@ public class Login extends Application {
         CheckBox show = new CheckBox();
         stage.setTitle("Weather App");
         Label label = new Label("LOGIN PAGE");
-        label.setFont(new Font("Times New Romens" , 30));
+        label.setFont(new Font("Calibri" , 30));
         HBox hb = new HBox(label);
         hb.setAlignment(Pos.CENTER);
+        hb.setPadding(new Insets(50,30,10,30));
         BorderPane border = new BorderPane();
         border.setTop(hb);
+
 
 
         Text username = new Text("Username");
         Text password = new Text("Password");
         TextField user = new TextField();
+        user.setStyle("-fx-border-radius: 15px; -fx-background-radius: 10px; -fx-background-color: #FEFEFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 15");
         PasswordField passwordField = new PasswordField();
+        passwordField.setStyle("-fx-border-radius: 15px; -fx-background-radius: 10px; -fx-background-color: #FEFEFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 15");
         Button signin = new Button("SIGN IN");
+        signin.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #5F6164; -fx-text-fill: #FEFEFE; -fx-margin: 10px; -fx-font-size: 12");
         Button signup = new Button("SIGN UP");
+        signup.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #5F6164; -fx-text-fill: #FEFEFE; -fx-margin: 10px; -fx-font-size: 12");
         signup.setCursor(Cursor.HAND);
         signin.setCursor(Cursor.HAND);
         String userstr = "Enter Username";
@@ -92,7 +97,11 @@ public class Login extends Application {
         layout.setPadding(new Insets(10));
         border.setCenter(layout);
 
-        Scene scene = new Scene(border,800,500);
+
+        StackPane stackPane = Transition.transit(stage);
+        stackPane.getChildren().add(border);
+        Scene scene = new Scene(stackPane,800,500);
+
 
         signin.setOnAction(new EventHandler<ActionEvent>() {
             @Override

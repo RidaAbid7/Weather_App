@@ -10,13 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 public class WeatherPage {
-    public static String city_name;
     public WeatherPage(Stage stage, Scene login_scene) throws FileNotFoundException {
 
         Text temp = new Text("Temperature:");
@@ -42,6 +43,7 @@ public class WeatherPage {
         inner_hbox.getChildren().add(imageView);
 
         Button btn = new Button("Previous");
+        btn.setStyle("-fx-border-radius: 10px; -fx-background-radius: 15px; -fx-background-color: #5F6164; -fx-text-fill: #FEFEFE; -fx-margin: 5px; -fx-font-size: 12");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -50,12 +52,19 @@ public class WeatherPage {
         });
 
         Button monday = new Button("Monday");
+        monday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button tuesday = new Button("Tuesday");
+        tuesday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button wednesday = new Button("Wednesday");
+        wednesday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button thursday = new Button("Thursday");
+        thursday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button friday = new Button("Friday");
+        friday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button saturday = new Button("Saturday");
+        saturday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
         Button sunday = new Button("Sunday");
+        sunday.setStyle("-fx-border-radius: 30px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 12");
 
         Platform.runLater(new Runnable() {
             @Override
@@ -66,7 +75,7 @@ public class WeatherPage {
                 wind_text.setText(Main.hashMap.get("wind"));
                 humidity_text.setText(Main.hashMap.get("humidity"));
                 desc_text.setText(Main.hashMap.get("description"));
-                imageView.setImage(new Image(Main.hashMap.get("icon")));
+//                imageView.setImage(new Image(Main.hashMap.get("icon")));
             }
         });
 
@@ -76,13 +85,14 @@ public class WeatherPage {
         hBox.setSpacing(10);
 
 
-        temp.setFont(new Font("Times New Roman" ,30));
+        temp.setFont(new Font("Calibri" ,30));
         temp_text.setFont(new Font(30));
 
         GridPane gp = new GridPane();
         gp.setAlignment(Pos.CENTER);
         gp.setVgap(20);
         gp.setHgap(20);
+        gp.setStyle("-fx-font-size: 17");
         gp.add(inner_hbox, 4,1,3,3);
         gp.addColumn(0, new Text());
         gp.add(temp, 0,0,2,1);
@@ -104,13 +114,14 @@ public class WeatherPage {
         bp.setCenter(gp);
         bp.setTop(btn);
         bp.setBottom(hBox);
+        bp.setBackground(Background.fill(Color.rgb(212, 228, 232)));
         Scene weatherscene = new Scene(bp , 800 ,500);
 
 
         monday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "monday");
+                Main2.function(City.city_name, "monday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -119,7 +130,7 @@ public class WeatherPage {
         tuesday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "tuesday");
+                Main2.function(City.city_name, "tuesday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -128,7 +139,7 @@ public class WeatherPage {
         wednesday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "wednesday");
+                Main2.function(City.city_name, "wednesday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -137,7 +148,7 @@ public class WeatherPage {
         thursday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "thursday");
+                Main2.function(City.city_name, "thursday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -146,7 +157,7 @@ public class WeatherPage {
         friday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "friday");
+                Main2.function(City.city_name, "friday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -155,7 +166,7 @@ public class WeatherPage {
         saturday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "saturday");
+                Main2.function(City.city_name, "saturday");
                 new FutureForecast(stage, weatherscene);
             }
         });
@@ -164,7 +175,7 @@ public class WeatherPage {
         sunday.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Main2.function(city_name, "sunday");
+                Main2.function(City.city_name, "sunday");
                 new FutureForecast(stage, weatherscene);
             }
         });

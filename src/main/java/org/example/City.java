@@ -18,18 +18,22 @@ public class City {
     public static String city_name;
 
     public City(Stage stage, Scene login_scene){
-        BackgroundImage bg1 = new BackgroundImage(new Image("C:\\Users\\Rida Abid\\Downloads\\background.png", 800, 500,false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        BackgroundImage bg1 = new BackgroundImage(new Image("C:\\Users\\Lenovo i5\\Desktop\\java_uni\\lab tasks\\Weather2.0\\background.png", 800, 500,false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
         TextField textField = new TextField();
         textField.setPromptText("Enter City Name");
+        textField.setStyle("-fx-border-radius: 15px; -fx-background-radius: 10px; -fx-background-color: #FEFEFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 15");
         Button search = new Button("Search");
+        search.setStyle("-fx-border-radius: 10px; -fx-background-radius: 15px; -fx-background-color: #B4DCFE; -fx-text-fill: #000001; -fx-margin: 5px; -fx-font-size: 12");
         Button login_button = new Button("Login Page");
+        login_button.setStyle("-fx-border-radius: 10px; -fx-background-radius: 15px; -fx-background-color: #5F6164; -fx-text-fill: #FEFEFE; -fx-margin: 5px; -fx-font-size: 12");
         Text text = new Text("Enter City Name");
+        text.setFont(new Font("Calibri", 20));
         Text top_text = new Text("Weather App");
-        top_text.setFont(new Font("Times New Roman", 30));
+        top_text.setFont(new Font("Calibri", 30));
         HBox hBox = new HBox(top_text);
         hBox.setAlignment(Pos.CENTER);
-        hBox.setPadding(new Insets(10));
+        hBox.setPadding(new Insets(30,20,0,20));
 
         GridPane gridPane = new GridPane();
         gridPane.addColumn(0, new Text());
@@ -37,10 +41,9 @@ public class City {
         gridPane.add(text, 2, 1);
         gridPane.add(textField, 2,2);
         gridPane.addRow(3, new Text());
-        gridPane.addRow(4, new Text());
-        gridPane.add(search, 3,5);
+        gridPane.add(search, 3,4);
         gridPane.setHgap(10);
-        gridPane.setVgap(10);
+        gridPane.setVgap(15);
         gridPane.setAlignment(Pos.CENTER);
 
 

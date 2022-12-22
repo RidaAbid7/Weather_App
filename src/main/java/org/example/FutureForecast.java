@@ -8,9 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -88,6 +90,8 @@ public class FutureForecast {
         BorderPane bp = new BorderPane();
         bp.setCenter(gp);
         bp.setBottom(btn);
+        bp.setBackground(Background.fill(Color.rgb(212, 228, 232)));
+
         Scene scene = new Scene(bp, 800, 500);
         stage.setScene(scene);
 

@@ -26,10 +26,12 @@ public class ShowPass implements EventHandler {
         {
             password.setText(pass.getText());
             layout.getChildren().remove(pass);
+            password.setStyle("-fx-border-radius: 15px; -fx-background-radius: 10px; -fx-background-color: #FEFEFE; -fx-text-fill: #000001; -fx-margin: 10px; -fx-font-size: 15");
             layout.add(password , 1 ,1);
         } if(!check.isSelected())
         {
             pass.setText(password.getText());
+
             layout.getChildren().remove(password);
             layout.add(pass , 1 ,1);
         }

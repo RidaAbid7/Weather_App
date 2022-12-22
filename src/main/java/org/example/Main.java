@@ -13,9 +13,6 @@ public class Main {
     static HashMap<String, String> hashMap = new HashMap<>();
 
     public static void function(String city_name){
-//        WebDriver webDriver = new ChromeDriver();
-//        webDriver.get("https://www.google.com/search?q=lahore+weather&rlz=1C1VDKB_enPK1023PK1023&oq=lahore&aqs=chrome.0.69i59l3j46i131i433i512j69i60l3j69i64.1806j1j7&sourceid=chrome&ie=UTF-8");
-//        webDriver.findElement()
 
         final WebClient web = new WebClient(BrowserVersion.CHROME);
 
@@ -34,11 +31,6 @@ public class Main {
             hashMap.put("description", page.getElementById("wob_dc").getVisibleText());
             hashMap.put("icon", "https:" + page.getElementById("wob_tci").getAttribute("src"));
 
-
-            System.out.println(page.getVisibleText());
-//            System.out.println(page.getElementById("wob_tm").get);
-//            System.out.println("Page Title: " + page.getTitleText());
-//            System.out.println("another text: " + page.asNormalizedText());
 
             web.getCurrentWindow().getJobManager().removeAllJobs();
             web.close();
