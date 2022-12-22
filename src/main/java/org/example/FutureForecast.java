@@ -88,6 +88,8 @@ public class FutureForecast {
         BorderPane bp = new BorderPane();
         bp.setCenter(gp);
         bp.setBottom(btn);
+        Scene scene = new Scene(bp, 800, 500);
+        stage.setScene(scene);
 
     }
 }

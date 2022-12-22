@@ -25,7 +25,7 @@ public class Main {
             web.getOptions().setThrowExceptionOnScriptError(false);
             web.getOptions().setPrintContentOnFailingStatusCode(false);
 
-            HtmlPage page = web.getPage("https://www.google.com/search?q=lahore+weather&rlz=1C1VDKB_enPK1023PK1023&oq=lahore&aqs=chrome.0.69i59l3j46i131i433i512j69i60l3j69i64.1806j1j7&sourceid=chrome&ie=UTF-8");
+            HtmlPage page = web.getPage("https://www.google.com/search?q=" + city_name + "+weather&rlz=1C1VDKB_enPK1023PK1023&oq=" + city_name + "&aqs=chrome.0.69i59l3j46i131i433i512j69i60l3j69i64.1806j1j7&sourceid=chrome&ie=UTF-8");
             hashMap.put("temp", page.getElementById("wob_tm").getVisibleText());
             hashMap.put("precipitation", page.getElementById("wob_pp").getVisibleText());
             hashMap.put("dayAndTime", page.getElementById("wob_dts").getVisibleText());

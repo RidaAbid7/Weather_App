@@ -132,8 +132,6 @@ public class Login extends Application {
 
     public static void main(String[] args) throws Exception {
         reader();
-        Main.function("");
-        Main2.function("", "");
         launch(args);
     }
 }
