@@ -12,13 +12,15 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class City {
     public static String city_name;
 
-    public City(Stage stage, Scene login_scene){
-        BackgroundImage bg1 = new BackgroundImage(new Image("C:\\Users\\Lenovo i5\\Desktop\\java_uni\\lab tasks\\Weather2.0\\background.png", 800, 500,false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+    public City(Stage stage, Scene login_scene) throws FileNotFoundException {
+        BackgroundImage bg1 = new BackgroundImage(new Image(new FileInputStream("background.png"), 800, 500,false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
         TextField textField = new TextField();
         textField.setPromptText("Enter City Name");

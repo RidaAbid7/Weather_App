@@ -113,7 +113,11 @@ public class Login extends Application {
                             passwordField.setText("");
 
                             stage.setTitle("Weather App");
-                            new City(stage, scene);
+                            try {
+                                new City(stage, scene);
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            }
                             return;
                         } else {
                             stage.setTitle("Invalid password or username");
